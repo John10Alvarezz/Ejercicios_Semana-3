@@ -1,52 +1,33 @@
+#include <iostream>
+#include <cmath>
+
 class Circulo {
 private:
     double radio;
-
 public:
-    // Constructor para inicializar el radio
-    Circulo(double r) : radio(r) {}
-
-    // Método para calcular el área del círculo
+    Circulo(double radio) {
+        this->radio = radio;
+    }
     double calcularArea() {
-        return 3.14159265358979323846 * radio * radio; // Usamos una aproximación de PI
+        return M_PI * pow(this->radio, 2);
     }
-
-    // Método para calcular el perímetro del círculo
     double calcularPerimetro() {
-        return 2.0 * 3.14159265358979323846 * radio; // Usamos una aproximación de PI
+        return 2 * M_PI * this->radio;
     }
-
-    // Método para cambiar el radio del círculo
-    void cambiarRadio(double nuevoRadio) {
-        radio = nuevoRadio;
+    void cambiarRadio(double nuevo_radio) {
+        this->radio = nuevo_radio;
     }
 };
 
 int main() {
-    // Instancia un objeto de la clase Circulo con un radio inicial de 5.0
-    Circulo miCirculo(5.0);
+    double radio_inicial = 6;
+    Circulo calcular_circulo(radio_inicial);
 
-    // Calcula el área y el perímetro del círculo
-    double area = miCirculo.calcularArea();
-    double perimetro = miCirculo.calcularPerimetro();
+    double area = calcular_circulo.calcularArea();
+    std::cout << "El área del círculo es: " << area << std::endl;
 
-    // Muestra el área y el perímetro del círculo
-    // sin usar la biblioteca iostream
-    asm(
-        "movl $4, %%eax;"
-        "movl $1, %%ebx;"
-        "movl %0, %%ecx;"
-        "movl $18, %%edx;"
-        "int $0x80;"
-        "movl $4, %%eax;"
-        "movl $1, %%ebx;"
-        "movl %1, %%ecx;"
-        "movl $18, %%edx;"
-        "int $0x80;"
-        :
-        : "m"(area), "m"(perimetro)
-        : "eax", "ebx", "ecx", "edx"
-    );
+    double perimetro = calcular_circulo.calcularPerimetro();
+    std::cout << "El perímetro del círculo es: " << perimetro << std::endl;
 
     return 0;
 }
