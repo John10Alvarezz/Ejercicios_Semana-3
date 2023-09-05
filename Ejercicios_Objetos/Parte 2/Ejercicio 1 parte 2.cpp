@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 class Circulo {
 private:
@@ -9,10 +8,10 @@ public:
         this->radio = radio;
     }
     double calcularArea() {
-        return M_PI * pow(this->radio, 2);
+        return 3.14159 * radio * radio;
     }
     double calcularPerimetro() {
-        return 2 * M_PI * this->radio;
+        return 2 * 3.14159 * radio;
     }
     void cambiarRadio(double nuevo_radio) {
         this->radio = nuevo_radio;
@@ -21,12 +20,12 @@ public:
 
 int main() {
     double radio_inicial = 6;
-    Circulo calcular_circulo(radio_inicial);
+    Circulo miCirculo(radio_inicial);
 
-    double area = calcular_circulo.calcularArea();
+    double area = miCirculo.calcularArea();
     std::cout << "El área del círculo es: " << area << std::endl;
 
-    double perimetro = calcular_circulo.calcularPerimetro();
+    double perimetro = miCirculo.calcularPerimetro();
     std::cout << "El perímetro del círculo es: " << perimetro << std::endl;
 
     return 0;
