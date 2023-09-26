@@ -52,5 +52,10 @@ class Asignatura:
         print(f"Codigo: {self.codigo}")
         print(f"Creditos: {self.creditos}")
 
+
 class Grupo:
-    def __init__(self):
+    def __init__(self, numero_grupo, asignatura, profesor, estudiantes):
+        self.numero_grupo = numero_grupo
+        self.asignatura = asignatura
+        self.profesor = profesor
+        self.estudiantes = []
