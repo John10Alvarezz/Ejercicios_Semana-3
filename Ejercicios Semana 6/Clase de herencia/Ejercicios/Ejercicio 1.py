@@ -16,6 +16,7 @@ class Electronico(Producto):
         self.unidades = unidades
 
     def mostrar_detalle(self):
+        print("Producto Electronico:")
         super().mostrar_detalle()
         print(f"Unidades disponibles: {self.unidades}")
 
@@ -26,6 +27,7 @@ class Alimeticio(Producto):
         self.paquetes = paquetes
 
     def mostrar_detalle(self):
+        print("Producto Alimenticio:")
         super().mostrar_detalle()
         print(f"N de paquetes: {self.paquetes}")
 
@@ -36,6 +38,7 @@ class Vestimenta(Producto):
         self.color = color
 
     def mostrar_detalle(self):
+        print("Producto de vestir:")
         super().mostrar_detalle()
         print(f"Color: {self.color}")
 
