@@ -4,6 +4,7 @@ class Producto:
         self.precio = precio
         self.categoria = categoria
 
+    # metodo
     def mostrar_detalle(self):
         print(f"nombre: {self.nombre}")
         print(f"precio: {self.precio}")
@@ -43,6 +44,7 @@ class Vestimenta(Producto):
         print(f"Color: {self.color}")
 
 
+# Instancias de cada objeto
 electronico = Electronico("Lavadora", "$120.000", "Linea Blanca", 5)
 electronico.mostrar_detalle()
 print()
