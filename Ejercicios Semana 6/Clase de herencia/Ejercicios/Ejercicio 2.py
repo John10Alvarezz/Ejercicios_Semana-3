@@ -17,7 +17,7 @@ class Gerente(Empleado):
 
     def describir_rol(self):
         super().describir_rol()
-        print(f"y trabajo en el departamento de {self.departamento}.")
+        print(f"y trabajo en el departamento de {self.departamento}.\n")
 
 
 class Ingeniero(Empleado):
@@ -27,7 +27,7 @@ class Ingeniero(Empleado):
 
     def describir_rol(self):
         super().describir_rol()
-        print(f"y me especializo en el area de {self.especialidad}.")
+        print(f"y me especializo en el area de {self.especialidad}.\n")
 
 
 class Asistente(Empleado):
@@ -41,10 +41,9 @@ class Asistente(Empleado):
 
 
 gerente = Gerente("Patricio", 40, "$1.100.000", "Ventas")
-gerente.describir_rol()
-print()
 ingeniero = Ingeniero("Neymar", 29, "$1.500.000", "Informatica")
-ingeniero.describir_rol()
-print()
 asistente = Asistente("Fabricio", 24, "$600.000", "Agendar visitas")
-asistente.describir_rol()
+
+empleado = [gerente, ingeniero, asistente]
+for i in empleado:
+    i.describir_rol()

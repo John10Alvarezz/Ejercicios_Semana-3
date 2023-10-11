@@ -19,7 +19,7 @@ class Electronico(Producto):
     def mostrar_detalle(self):
         print("Producto Electronico:")
         super().mostrar_detalle()
-        print(f"Unidades disponibles: {self.unidades}")
+        print(f"Unidades disponibles: {self.unidades}\n")
 
 
 class Alimeticio(Producto):
@@ -30,7 +30,7 @@ class Alimeticio(Producto):
     def mostrar_detalle(self):
         print("Producto Alimenticio:")
         super().mostrar_detalle()
-        print(f"N de paquetes: {self.paquetes}")
+        print(f"N de paquetes: {self.paquetes}\n")
 
 
 class Vestimenta(Producto):
@@ -46,10 +46,10 @@ class Vestimenta(Producto):
 
 # Instancias de cada objeto
 electronico = Electronico("Lavadora", "$120.000", "Linea Blanca", 5)
-electronico.mostrar_detalle()
 print()
 alimenticio = Alimeticio("Arroz", "$7.000", "Alimentos", 2)
-alimenticio.mostrar_detalle()
-print()
 vestimenta = Vestimenta("Pantalones", "$12.000", "Ropa", "Rojo")
-vestimenta.mostrar_detalle()
+
+productos = [electronico, alimenticio, vestimenta]
+for i in productos:
+    i.mostrar_detalle()

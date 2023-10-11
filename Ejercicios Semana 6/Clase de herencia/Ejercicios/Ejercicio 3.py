@@ -4,7 +4,7 @@ class Animal:
         self.edad = edad
 
     def sonido(self):
-        print(f"Nombre: {self.nombre}")
+        print(f"Nombre del animal: {self.nombre}")
         print(f"Edad: {self.edad}")
 
 
@@ -15,7 +15,7 @@ class Perro(Animal):
 
     def sonido(self):
         super().sonido()
-        print(f"Sonido que emite: {self.sonido_perro}")
+        print(f"Sonido que emite: {self.sonido_perro}\n")
 
 
 class Gato(Animal):
@@ -25,7 +25,7 @@ class Gato(Animal):
 
     def sonido(self):
         super().sonido()
-        print(f"Sonido que emite: {self.sonido_gato}")
+        print(f"Sonido que emite: {self.sonido_gato}\n")
 
 
 class Pajaro(Animal):
@@ -39,10 +39,9 @@ class Pajaro(Animal):
 
 
 perro = Perro("perro", 5, "Guau-Guau")
-perro.sonido()
-print()
 gato = Gato("gato", 3, "Miau-Miau")
-gato.sonido()
-print()
 pajaro = Pajaro("pajaro", 2, "Pio-pio")
-pajaro.sonido()
+
+animal = [perro, gato, pajaro]
+for i in animal:
+    i.sonido()
